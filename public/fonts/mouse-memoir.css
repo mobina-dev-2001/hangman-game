@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Mouse Memoirs';
+    src: local('Mouse Memoirs Regular'),
+        local('MouseMemoirs-Regular'),
+        url('/fonts/MouseMemoirs-Regular.woff2') format('woff2'),
+        url('/fonts/MouseMemoirs-Regular.woff') format('woff'),
+        url('/fonts/MouseMemoirs-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}

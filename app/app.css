@@ -1,0 +1,25 @@
+@import '../public/fonts/mouse-memoir.css';
+@import 'tailwindcss';
+
+@theme {
+  /* colors */
+  --color-persian-indigo: #2b1677;
+  --color-black-rock: #1a043a;
+  --color-deep-koamaru: #151278;
+  --color-dark-navy: #261676;
+  --color-resolution-blue: #001479;
+  --color-arapawa: #140e66;
+  --color-ebony-clay: #243041;
+  --color-governor-bay: #344aba;
+  --color-blue-ribbon: #2463ff;
+  --color-dodger-blue: #3c74ff;
+  --color-malibu: #7199ff;
+  --color-malibu-light: #67b6ff;
+  --color-purple-mountains-majesty: #887dc0;
+  --color-electric-violet: #9d2df5;
+  --color-heliotrope: #bd24fb;
+  --color-blush-pink: #fe71fe;
+
+  /* fonts */
+  --font-sans: 'Mouse Memoirs', sans-serif;
+}
