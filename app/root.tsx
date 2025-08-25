@@ -21,7 +21,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className="min-h-screen font-sans antialiased">
+      <body className="flex justify-center items-center min-h-screen py-[clamp(2rem,6vw,3.75rem)] px-[clamp(1.563rem,9vw,7rem)] bg-[url(/images/background-mobile.svg)] sm:bg-[url(/images/background-tablet.svg)] md:bg-[url(/images/background-desktop.svg)] bg-no-repeat bg-cover bg-bottom antialiased font-sans text-white text-[clamp(1.25rem,4vw,1.625rem)] tracking-wider text-center">
         {children}
         <ScrollRestoration />
         <Scripts />

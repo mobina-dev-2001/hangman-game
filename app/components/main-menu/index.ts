@@ -1,1 +1,1 @@
-export * from './MainMenu';
+export * from './main-menu';
