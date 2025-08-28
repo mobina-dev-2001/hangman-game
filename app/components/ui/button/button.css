@@ -1,0 +1,24 @@
+@layer utilities {
+  .shadow-btn-rect-primary {
+    box-shadow:
+      var(--inset-shadow-xs) var(--color-arapawa),
+      var(--inset-shadow-highlight-sm) var(--color-dodger-blue);
+  }
+
+  .shadow-btn-rect-secondary {
+    box-shadow:
+      var(--inset-shadow-xs) var(--color-arapawa),
+      var(--inset-shadow-highlight-sm) var(--color-heliotrope-light);
+  }
+
+  .shadow-btn-circle-primary {
+    box-shadow:
+      var(--inset-shadow-sm) var(--color-ebony-clay),
+      var(--inset-shadow-highlight-lg) var(--color-electric-violet);
+  }
+
+  .shadow-btn-circle-secondary {
+    box-shadow: var(--inset-shadow-md)
+      color-mix(in srgb, var(--color-electric-violet) 25%, transparent);
+  }
+}

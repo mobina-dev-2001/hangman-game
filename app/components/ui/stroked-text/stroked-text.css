@@ -1,0 +1,24 @@
+.stroked-text {
+  position: relative;
+
+  background: linear-gradient(to bottom, var(--color-malibu-light), white);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.stroked-text::before {
+  content: attr(data-text);
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+
+  -webkit-text-stroke: var(--stroke-width, 15px) var(--color-ebony-clay);
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}

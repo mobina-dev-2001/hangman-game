@@ -1,38 +1,36 @@
+import './button.css';
+
 interface ButtonProps {
-  children: React.ReactNode;
+  className?: string;
   variant?: 'rectangular' | 'circular';
   color?: 'primary' | 'secondary';
-  className?: string;
+  children: React.ReactNode;
   [key: string]: any;
 }
 
 export function Button({
-  children,
+  className = '',
   variant = 'rectangular',
   color = 'primary',
-  className = '',
+  children,
   ...other
 }: ButtonProps) {
   const baseClasses =
-    'grid place-items-center uppercase cursor-pointer transition-all duration-300 ease-in-out hover:scale-105 active:scale-100';
+    'grid place-items-center bg-linear-to-b uppercase cursor-pointer transition-all duration-300 ease-in-out hover:scale-105 hover:brightness-125 active:scale-100';
 
   const variantClasses = {
-    rectangular: 'px-16 py-3 rounded-[2.5rem]',
-    circular: 'self-end max-w-[12.5rem] w-[40%] min-w-[10rem] aspect-square rounded-full',
+    rectangular: 'px-16 py-3 rounded-5xl',
+    circular: 'p-[clamp(0.687rem,2vw,1.625rem)] aspect-square rounded-full',
   };
 
   const rectangularColorClasses = {
-    primary:
-      'bg-blue-ribbon shadow-[inset_0_-2px_0_3px_var(--color-arapawa),inset_0_1px_0_6px_var(--color-dodger-blue)]',
-    secondary:
-      'bg-gradient-to-b from-blush-pink to-malibu shadow-[inset_0_-2px_0_3px_var(--color-arapawa),inset_0_1px_0_6px_var(--color-heliotrope-light)]',
+    primary: 'from-blue-ribbon to-blue-ribbon shadow-btn-rect-primary',
+    secondary: 'from-blush-pink to-malibu shadow-btn-rect-secondary',
   };
 
   const circularColorClasses = {
-    primary:
-      'bg-blue-ribbon shadow-[inset_0_-4px_0_5px_var(--color-ebony-clay),inset_0_-12px_0_11px_var(--color-dodger-blue)]',
-    secondary:
-      'bg-gradient-to-b from-blush-pink to-malibu shadow-[inset_0_-4px_0_5px_var(--color-ebony-clay),inset_0_-12px_0_11px_var(--color-electric-violet)]',
+    primary: 'from-blush-pink to-malibu shadow-btn-circle-primary',
+    secondary: 'from-blush-pink to-malibu shadow-btn-circle-secondary',
   };
 
   const combinedClasses =

@@ -1,12 +1,22 @@
+import './card.css';
+
 interface CardProps {
-  children: React.ReactNode;
+  className?: string;
   heading: React.ReactNode;
+  children: React.ReactNode;
 }
 
-export function Card({ children, heading }: CardProps) {
+export function Card({ className = '', heading, children }: CardProps) {
+  const baseClasses = [
+    'relative grid w-full max-w-148 min-h-111 py-12.5 px-6 bg-linear-to-b from-governor-bay to-resolution-blue/83 rounded-[clamp(3rem,5vw,4.5rem)] shadow-card',
+    className,
+  ]
+    .filter(Boolean)
+    .join(' ');
+
   return (
-    <div className="relative grid place-items-center min-w-[20.25rem] w-[41vw] min-h-[31.25rem] bg-gradient-to-b from-governor-bay to-resolution-blue/83 rounded-[4.5rem] shadow-[inset_0_-8px_0_4px_var(--color-arapawa),inset_0_6px_0_8px_var(--color-blue-ribbon)]">
-      <div className="absolute bottom-[85%] px-[2rem]">{heading}</div>
+    <div className={baseClasses}>
+      <div className="absolute -top-34 max-[28.5rem]:-top-18.75 w-full p-6.5">{heading}</div>
       {children}
     </div>
   );

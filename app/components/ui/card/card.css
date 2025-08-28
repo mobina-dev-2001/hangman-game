@@ -1,0 +1,7 @@
+@layer utilities {
+  .shadow-card {
+    box-shadow:
+      var(--inset-shadow-lg) var(--color-arapawa),
+      var(--inset-shadow-highlight-md) var(--color-blue-ribbon);
+  }
+}
