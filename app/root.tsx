@@ -6,11 +6,25 @@ import {
   Scripts,
   ScrollRestoration,
 } from 'react-router';
-
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { makeServer } from '~/mirage/server';
 import type { Route } from './+types/root';
 import './app.css';
 
 export const links: Route.LinksFunction = () => [];
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 5 * 60 * 1000,
+      retry: 1,
+    },
+  },
+});
+
+if (import.meta.env.DEV) {
+  makeServer();
+}
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -22,7 +36,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body className="flex justify-center items-center min-h-screen py-[clamp(2rem,5.75vw,5rem)] px-[clamp(1.563rem,7.8vw,7rem)] bg-[url(/images/background-mobile.svg)] sm:bg-[url(/images/background-tablet.svg)] md:bg-[url(/images/background-desktop.svg)] bg-no-repeat bg-cover bg-top antialiased font-sans text-white text-body tracking-wider leading-[1.2] text-center">
-        {children}
+        <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
         <ScrollRestoration />
         <Scripts />
       </body>

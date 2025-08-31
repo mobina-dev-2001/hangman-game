@@ -6,4 +6,8 @@ export default [
     path: '/how-to-play',
     file: 'routes/how-to-play.tsx',
   },
+  {
+    path: '/pick-a-category',
+    file: 'routes/pick-a-category.tsx',
+  },
 ] satisfies RouteConfig;

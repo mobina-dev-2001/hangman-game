@@ -4,9 +4,14 @@ import { Button } from '~/components/ui/button';
 
 export function MainMenu() {
   const navigate = useNavigate();
+
   return (
     <Card heading={<img className="mx-auto" src="/logo.svg" alt="logo" />}>
-      <Button className="justify-self-center mt-19.5 mb-14.5" variant="circular">
+      <Button
+        className="justify-self-center mt-19.5 mb-14.5"
+        variant="circular"
+        onClick={() => navigate('/pick-a-category')}
+      >
         <img className="p-10.25" src="/icons/icon-play.svg" alt="play icon" />
       </Button>
       <Button

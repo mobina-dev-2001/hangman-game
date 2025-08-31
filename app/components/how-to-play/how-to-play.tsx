@@ -27,7 +27,7 @@ export function HowToPlay() {
   ];
 
   return (
-    <section className="grid gap-16">
+    <section className="grid gap-16 w-full">
       <header className="relative">
         <Button
           className="absolute z-1 top-1/2 -translate-y-1/2"
